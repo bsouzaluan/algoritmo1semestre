@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    valor da venda por saca<input id="valorSaca" type="text">
+    quantidade de sacas vendidas <input id="qntSacas" type="text"><br>
+   
+
+    <button onclick="calcular()">calcular</button>
+    <div id="mostrarResultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var sacas =60;
+        var totalSacas = qntSacas.value*sacas;
+        var prejuizo = ((totalSacas*valorSaca.value)*0.70);
+        var lucro =((totalSacas*valorSaca.value)*1.30)
+       
+      
+        mostrarResultado.innerHTML=`seu prejuizo é de ${prejuizo}reais ja com a nossa soluçao voce vai lucrar ${lucro}reais`
+      
+
+        
+
+
+
+    }
+</script>

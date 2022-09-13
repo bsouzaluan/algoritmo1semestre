@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    valor da grama do sorvete<input id="valorSorvete" type="text">
+    quantidades de grama<input id="quantidadeGrama" type="text">
+    tipo de cobertura<input id="cobertura" type="text">
+    tipo de sorvete<input id="tipoSorvete" type="text">
+    <button onclick="custoSorvete()">custo do sorvete</button>
+    <div id="calculo">calcular</div>
+</body>
+</html>
+
+<script>
+    function custoSorvete() {
+        var sorvete = valorSorvete.value * quantidadeGrama.value;
+        
+        
+        
+        if (tipoSorvete.value == "gourmet") {
+            calculo.innerHTML = sorvete * 1.11;
+        } else {
+           calculo.innerHTML = sorvete * 0.10;
+            
+        }
+        
+        if (cobertura.value != "chocolate") {
+            calculo.innerHTML =sorvete + 0.01;
+        } else {
+            calculo.innerHTML = sorvete;
+            
+        }
+        if (sorvete > 10) {
+            calculo.innerHTML=`“O seu sorvete vai custar ${sorvete} e vai comprometer a mesada`;
+        } else {
+            calculo.innerHTML=`Hoje você está manerando, voce gastou somente${sorvete}`;
+        }
+
+    }
+</script>

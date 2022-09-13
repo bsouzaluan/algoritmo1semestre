@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio19</title>
+</head>
+<body>
+    quantos filhos voce tem menores de 10 anos<input id="quantidadeFilhosMenores" type="text">
+    <br>
+    quantos filhos voce tem maiores de 10 anos<input id="quantidadeFilhosMaiores" type="text">
+    
+    <br>
+    <button onclick="calcularFilhos()">calcular auxilio filhos</button>
+
+    <div id="divCalculo">auxilio filhos</div>
+</body>
+</html>
+
+<script>
+function calcularFilhos() {
+    divCalculo.innerHTML= "voce tem: " + quantidadeFilhosMenores.value  + 
+    ""+"filhos menores de 10 anos e" 
+    + quantidadeFilhosMaiores.value + ""+"filhos a partir de 10 anos ,logo,seu auxilio filhos é de:"+
+    ((quantidadeFilhosMaiores.value * 20)+ Number (quantidadeFilhosMenores.value *30))
+}
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio8</title>
+</head>
+<body>
+    quantos minutos a torneira 1 ficou pingando<input id="torneira1" type="text">
+    <br>
+    quantos minutos a torneira 2 ficou pingando<input id="torneira2" type="text">
+    <br>
+    quantos minutos a torneira 3 ficou pingando<input id="torneira3" type="text">
+
+    <button onclick="desperdicio()">desperdicio total</button>
+</body>
+</html>
+
+<script>
+    function desperdicio() {
+        alert('seu desperdicio foi de: ' +( Number (torneira1.value  )+ Number (torneira2.value )+ Number (torneira3.value ))*15 + " litros de agua")
+    
+    }
+</script>

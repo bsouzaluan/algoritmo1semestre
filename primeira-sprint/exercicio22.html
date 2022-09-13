@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio22</title>
+</head>
+<body>
+    quantos votos zé buduia teve na eleiçao<input id="candidato1" type="text">
+    <br>
+    quantos votos maria bigodenha teve na eleiçao<input id="candidato2" type="text">
+    <br>
+    quantos votos brancos houveram na eleiçao<input id="votosBrancos" type="text">
+    <br>
+    quantos votos nulos houveram na eleiçao<input id="votosNulos" type="text">
+    <br>
+    <button onclick="resultadoEleicao()">Resultado da eleiçao</button>
+    <br>
+    total de votos:<div id="divResultado1">resultado da eleiçao</div>
+    zé buduia teve na eleiçao:<div id="divResultado2"></div>
+    maria bigodenha teve na eleiçao:<div id="divResultado3"></div>
+    invalidos:<div id="divResultado4"></div>
+</body>
+</html>
+
+<script>
+
+function resultadoEleicao() {
+    var Resultado1 = (+Number(candidato1.value) + Number  (candidato2.value) + Number (votosBrancos.value) + Number (votosNulos.value));
+    var Resultado2 =  candidato1.value / Resultado1*100 + "%votos" + candidato1.value +"(votos)";
+    var Resultado3 = candidato2.value /Resultado1*100 + "%votos" + candidato2.value + "(votos)";
+    var Resultado4 = (+Number(votosBrancos.value) + Number (votosNulos.value))/Resultado1*100 +"%votos" +(+Number(votosBrancos.value) + Number (votosNulos.value))+ "(votos)";
+
+    divResultado1.innerHTML = Resultado1
+    divResultado2.innerHTML = Resultado2
+    divResultado3.innerHTML = Resultado3
+    divResultado4.innerHTML = Resultado4
+
+}
+
+</script>

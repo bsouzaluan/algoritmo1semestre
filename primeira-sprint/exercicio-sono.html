@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercio sono</title>
+</head>
+<body>
+    quantas horas voce dormiu:<input id="horasDormidas" type="text">
+    <button onclick="calculoSono()">calcular sono</button>
+
+    <div id="divSono1">horas</div>
+    <div id="divSono2"></div>
+    <div id="divSono3"></div>
+    <div id="divSono4"></div>
+</body>
+</html>
+<script>
+    function calculoSono() {
+        divSono1.innerHTML= horasDormidas.value *0.05 +'horas na fase 1'
+        divSono2.innerHTML = horasDormidas.value * 0.45 +'horas na fase 2'
+        divSono3.innerHTML = horasDormidas.value * 0.3 +'horas na fase 3'
+        divSono4.innerHTML = horasDormidas.value * 0.2 +'horas na fase 4'
+    }
+</script>

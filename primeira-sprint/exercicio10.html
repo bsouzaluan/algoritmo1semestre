@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio10</title>
+</head>
+<body>
+    digite seu peso<input id="peso" type="text">
+    digite sua altura <input id="altura" type="text">
+    <button onclick="calculoHomem()">imc homem</button>
+    <button onclick="calculoMulher()">imc mulher</button>
+    <div id="div_calculo">calculo</div>
+</body>
+</html>
+
+<script>
+    function calculoHomem () {
+        div_calculo.innerHTML = peso.value /(altura.value * altura.value)
+    }
+
+    function calculoMulher() {
+        div_calculo.innerHTML = peso.value /(altura.value *altura.value) *0.9
+    }
+</script>

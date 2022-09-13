@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio2</title>
+</head>
+<body>
+    <input id="saldoAnterior" type="text"placeholder="saldo anterior">
+    <input id="valorCredito" type="text"placeholder="valor de credito">
+    <input id="valorDebito" type="text"placeholder="valor de debito">
+    <button onclick="calcular()">calcular</button>
+<div id="div_receber">receber</div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        
+        var saldoFinal = (Number (saldoAnterior.value) + Number(valorCredito.value))-valorDebito.value;
+        var diferencaSaldo = Number(saldoFinal) -Number(saldoAnterior.value);
+        var movimentacao = valorCredito.value - valorDebito.value ;
+        var proporcaoSaldo = ((saldoFinal /saldoAnterior.value))*100;
+
+     
+
+        div_receber.innerHTML = `seu saldo anterior era de :${saldoAnterior.value}<br>
+        voce movimentou:${movimentacao.toFixed(2)}<br>
+        diferença de:${diferencaSaldo.toFixed(2)}<br>
+        seu saldo final é de:${saldoFinal.toFixed(2)}<br>
+        proporçao:${proporcaoSaldo}%`;
+        saldoAnterior.value= '';
+        valorCredito.value='';
+        valorDebito.value='';
+    }
+</script>

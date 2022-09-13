@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio11</title>
+</head>
+<body>
+    <input id="digiteSalario" type="text">
+
+    <button onclick="calculo1()">calculo o desconto do INSS</button>
+    <button onclick="calculo2()">calculo do valor do desconto do IR</button>
+    <button onclick="calculo3()">calculo do valor sindical</button>
+
+    <div id="div_resultado">apesar de seu bruto ser X apos os descontos vc recebera X</div>
+</body>
+</html>
+<script>
+
+    function calculo1() {
+        div_resultado.innerHTML = "apesar do seu bruto ser"+digiteSalario.value +"foi descontado" + digiteSalario.value * 0.10 +"reais do seu INSS"
+        
+    }
+    function calculo2() {
+        div_resultado.innerHTML = "apesar do seu bruto ser"+digiteSalario.value +"foi descontado" +digiteSalario.value * 0.20 +"reais do seu IR"
+    }
+    function calculo3() {
+        div_resultado.innerHTML = "apesar do seu bruto ser"+digiteSalario.value +"foi descontado" +digiteSalario.value * 0.03 +"reais do imposto sindical"
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos kwh voce consumiu este mes <input id="kwhmes" type="text">
+    <button onclick="calcular()">calculo</button>
+</body>
+</html>
+
+<script>
+function calcular() {
+    var calculokwh = kwhmes.value * 0.85;
+
+    if (kwhmes.value <100) {
+        alert(`VOCE VAI PAGAR com um desconto de 10% ${calculokwh * 0.90.toFixed (2)} `)  
+    }else{
+
+        alert(`VOCE VAI PAGAR ${calculokwh} `) 
+    }
+    
+
+}
+
+</script>

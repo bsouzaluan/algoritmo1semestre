@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text">Você já clicou 0 vezes</div> <button onclick="clicar()">Clica Neu</button>
+    <div id="res">
+        
+    </div>
+</body>
+</html>
+<script>
+    var vezes = 0
+
+    function clicar() {
+        vezes ++
+        mostrar()
+        if (vezes < 5) {
+            res.innerHTML = `Dedo fraquinho, hein`
+        } else if (vezes <= 10) {
+            res.innerHTML = `"Dedo bom, mano`
+        } else if (vezes <= 15) {
+            res.innerHTML = `Gosta de clicar, hein!`
+        } else {
+            res.innerHTML = `Eita dedo nervoso!`
+        }
+    }
+    
+    function mostrar() {
+        text.innerHTML = `Você já clicou ${vezes} vezes`
+    }
+</script>

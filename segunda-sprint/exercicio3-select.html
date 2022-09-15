@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select  id="lista1">
+        <option value="uma vez">uma vez</option>
+        <option value="num belo dia">num belo dia</option>
+        <option value="numa noite chuvosa">numa noite chuvosa</option>
+    </select>
+
+    <select  id="lista2">
+        <option value=" um peixe morreu afogado">um peixe morreu afogado</option>
+        <option value=" um gato tomou banho">um gato tomou banho</option>
+        <option value=" um corvo se curvou">um corvo se curvou</option>
+    </select><br><br>
+
+    <button onclick="exibir()">botao</button>
+</body>
+</html>
+
+<script>
+
+    function exibir() {
+        var list1 = lista1.value;
+        var list2 = lista2.value;
+
+        alert(list1 + list2)
+    }
+</script>

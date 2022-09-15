@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <select id="produtos" onchange="preco()">
+        <option >selecione o preco do pao</option>
+        <option value="o produto  custa 10,00 reais">farinha</option>
+        <option value="este leite custa 8,00 reais">leite</option>
+        <option value="este pacote de arroz custa 15,00 reais">arroz</option>
+        <option value="este pacote de feijao custa 15,00 reais">feijao</option>
+    </select>
+   
+
+
+</body>
+
+<script>
+    function preco() {
+        var prod = produtos.value;
+
+        
+            alert(`${prod}`);
+        
+    }
+</script>
+
+</html>

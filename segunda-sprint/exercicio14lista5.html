@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual o sabor da pizza <input id="saborPizza" type="text">
+    <select id="ingrediente1">
+        <option value="queijo"> Queijo </option>
+        <option value="presunto"> Presunto</option>
+        <option value="ovo"> Ovo</option>
+        <option value="palmito"> Palmito</option>
+        <option value="frango"> Frango</option>
+        <option value="catupiry "> Catupiry</option>
+    </select>
+    <select id="ingrediente2">
+        <option value="queijo"> Queijo </option>
+        <option value="presunto"> Presunto</option>
+        <option value="ovo"> Ovo</option>
+        <option value="palmito"> Palmito</option>
+        <option value="frango"> Frango</option>
+        <option value="catupiry "> Catupiry</option>
+    </select>
+
+    <select id="ingrediente3">
+        <option value="queijo"> Queijo </option>
+        <option value="presunto"> Presunto</option>
+        <option value="ovo"> Ovo</option>
+        <option value="palmito"> Palmito</option>
+        <option value="frango"> Frango</option>
+        <option value="catupiry "> Catupiry</option>
+    </select>
+
+    <button onclick="Calculo()">calcular preço da pizza</button>
+
+    <div id="mostrar"></div>
+
+</body>
+
+</html>
+
+<script>
+    var ingrediente =0
+    function Calculo() {
+        
+
+        if (ingrediente1.value == 'queijo') {
+            ingrediente = ingrediente + 5.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente1.value =='presunto'){
+            ingrediente = ingrediente + 4.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente1.value =='ovo'){
+            ingrediente = ingrediente + 3.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente1.value =='palmito'){
+            ingrediente = ingrediente + 9.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente1.value =='frango'){
+            ingrediente = ingrediente + 6.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente1.value =='catupiry'){
+            ingrediente = ingrediente + 10.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }
+        if (ingrediente2.value == 'queijo') {
+            ingrediente = ingrediente + 5.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente2.value =='presunto'){
+            ingrediente = ingrediente + 4.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente2.value =='ovo'){
+            ingrediente = ingrediente + 3.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente2.value =='palmito'){
+            ingrediente = ingrediente + 9.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente2.value =='frango'){
+            ingrediente = ingrediente + 6.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente2.value =='catupiry'){
+            ingrediente = ingrediente + 10.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }
+        if (ingrediente3.value == 'queijo') {
+            ingrediente = ingrediente + 5.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente3.value =='presunto'){
+            ingrediente = ingrediente + 4.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente3.value =='ovo'){
+            ingrediente = ingrediente + 3.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente3.value =='palmito'){
+            ingrediente = ingrediente + 9.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente3.value =='frango'){
+            ingrediente = ingrediente + 6.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }else if (ingrediente3.value =='catupiry'){
+            ingrediente = ingrediente + 10.00;
+            mostrar.innerHTML =`<b>a pizza de ${saborPizza.value} vai custar um total de <u>${ingrediente}<u/> reais<b/>`;
+        }
+
+    }
+</script>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select  id="hobbys" onchange="hobby()">
+        <option value="dancar">Dançar</option>
+        <option value="jogar">jogar video game</option>
+        <option value="seriados">Assistir seriados</option>
+        <option value="ouvir">ouvir Rock</option>
+    </select>
+
+    <select  id="vezesSemana" onchange="hobby()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+
+  <img src="" id="foto">
+
+
+</body>
+</html>
+
+<script>
+    function hobby() {
+      
+        var hobbyss = hobbys.value;
+        if (hobbyss == 'dancar') {
+           foto.src=`https://cdn.shopify.com/s/files/1/1061/1924/files/Dancer_With_Red_Dress_Emoji_400x400.png`;
+           if (vezesSemana.value == 1) {
+            foto.style.width=`50px`;
+           }
+           if (vezesSemana.value == 2) {
+            foto.style.width=`100px`;
+           }
+           if (vezesSemana.value == 3) {
+            foto.style.width=`140px`;
+           }
+           if (vezesSemana.value == 4) {
+            foto.style.width=`190px`;
+           }
+           if (vezesSemana.value == 5) {
+            foto.style.width=`260px`;
+           }
+           if (vezesSemana.value == 6) {
+            foto.style.width=`300px`;
+           }
+           
+        } else if (hobbyss == 'jogar') {
+           foto.src=`https://cdn.shopify.com/s/files/1/1061/1924/files/Virus_Emoji_400x400.png`;
+           if (vezesSemana.value == 1) {
+            foto.style.width=`50px`;
+           }
+           if (vezesSemana.value == 2) {
+            foto.style.width=`100px`;
+           }
+           if (vezesSemana.value == 3) {
+            foto.style.width=`140px`;
+           }
+           if (vezesSemana.value == 4) {
+            foto.style.width=`190px`;
+           }
+           if (vezesSemana.value == 5) {
+            foto.style.width=`260px`;
+           }
+           if (vezesSemana.value == 6) {
+            foto.style.width=`300px`;
+           }
+    }
+    else if (hobbyss == 'seriados') {
+           foto.src=`https://cdn.shopify.com/s/files/1/1061/1924/files/Man_Bowing_Emoji_400x400.png`;
+           if (vezesSemana.value == 1) {
+            foto.style.width=`50px`;
+           }
+           if (vezesSemana.value == 2) {
+            foto.style.width=`100px`;
+           }
+           if (vezesSemana.value == 3) {
+            foto.style.width=`140px`;
+           }
+           if (vezesSemana.value == 4) {
+            foto.style.width=`190px`;
+           }
+           if (vezesSemana.value == 5) {
+            foto.style.width=`260px`;
+           }
+           if (vezesSemana.value == 6) {
+            foto.style.width=`300px`;
+           }
+        }else if (hobbyss == 'ouvir') {
+           foto.src=`https://cdn.shopify.com/s/files/1/1061/1924/files/Sign_of_the_Horns_Emoji_400x400.png`;
+           if (vezesSemana.value == 1) {
+            foto.style.width=`50px`;
+           }
+           if (vezesSemana.value == 2) {
+            foto.style.width=`100px`;
+           }
+           if (vezesSemana.value == 3) {
+            foto.style.width=`140px`;
+           }
+           if (vezesSemana.value == 4) {
+            foto.style.width=`190px`;
+           }
+           if (vezesSemana.value == 5) {
+            foto.style.width=`260px`;
+           }
+           if (vezesSemana.value == 6) {
+            foto.style.width=`300px`;
+           }
+        }
+    }
+
+   
+</script>

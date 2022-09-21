@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua renda<input id="renda" type="text">
+    Qual a renda total da sua familia<input id="rendaFamiliar" type="text">
+
+    <button onclick="verificar()">verificar ajuda</button>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var r =renda.value;
+        var rf = rendaFamiliar.value; 
+        var total =(Number(r) +Number( rf));
+        if (r >0 && r <=1500 && rf >0 && rf<=2500) {
+            alert('voce tera direito')
+        } else {
+            alert('voce nao tera direito')
+        }
+    }
+</script>

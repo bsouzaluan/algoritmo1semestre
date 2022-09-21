@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual seu login <input id="login" type="text">
+    qual sua senha <input id="senha" type="password">
+    qual seu codigo de segurança  <input id="codigoSeguranca" type="text">
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+
+<script>
+    function entrar() {
+        var l =login.value;
+        var s = senha.value;
+        var cs = codigoSeguranca.value;
+        if (l == 'SPTech' && s =='digital' && cs=='123' ) {
+            alert('"Usuário autenticado com sucesso')
+        }else{
+            alert('Falha na autenticação')
+        }
+    }
+</script>

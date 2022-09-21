@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="cofrinho">
+        <option value="cincoCentavos">5centavos</option>
+        <option value="dezCentavos">10centavos</option>
+        <option value="vinteCincoCentavos">25centavos</option>
+        <option value="cinquentaCentavos">50centavos</option>
+        <option value="umReal">1real</option>
+    </select>
+
+    <button onclick="Deposito()">Depositar</button>
+    <button onclick="gastarGrana()">Gastar a grana</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    var cofre = 0;
+    var click =0;
+    
+    
+    
+    function Deposito() {
+        click ++;
+        if (cofrinho.value == 'cincoCentavos') {
+            var media = cofre / click;
+             cofre = cofre + 0.05;
+             mostrar.innerHTML = `o saldo do cofrinho é de ${cofre.toFixed(2)} voce clicou ${click} vezes sua media é${media.toFixed(2)}`;
+        
+        }else if (cofrinho.value == 'dezCentavos'){
+            var media = cofre / click;
+            cofre = cofre + 0.10;
+             mostrar.innerHTML = `o saldo do cofrinho é de ${cofre.toFixed(2)} voce clicou ${click} vezes sua media é${media.toFixed(2)}`;
+        }else if (cofrinho.value == 'vinteCincoCentavos'){
+            cofre = cofre + 0.25;
+            var media = cofre / click;
+             mostrar.innerHTML = `o saldo do cofrinho é de ${cofre.toFixed(2)} voce clicou ${click} vezes sua media é${media.toFixed(2)}`;
+        }else if (cofrinho.value == 'cinquentaCentavos'){
+            var media = cofre / click;
+            cofre = cofre + 0.50;
+             mostrar.innerHTML = `o saldo do cofrinho é de ${cofre.toFixed(2)} voce clicou ${click} vezes sua media é${media.toFixed(2)}`;
+        }else if (cofrinho.value == 'umReal'){
+            var media = cofre / click;
+            cofre = cofre + 1.00;
+             mostrar.innerHTML = `o saldo do cofrinho é de ${cofre.toFixed(2)} voce clicou ${click} vezes sua media é${media.toFixed(2)}`;
+        }
+    }
+
+    function gastarGrana() {
+        click=0;
+        cofre=0;
+        mostrar.innerHTML = `o saldo do cofrinho é de ${cofre.toFixed(2)} voce clicou ${click} vezes sua media é`;
+        
+        }
+</script>

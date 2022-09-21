@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nougard</title>
+</head>
+
+<body>
+    digite seu nome<input id="nome" type="text"><br><br>
+    digite a faixa que esta<input id="faixa" type="text"><br><br>
+    quantas vitorias teve<input id="vitorias" type="text"><br><br>
+    quantos empates teve<input id="empates" type="text"><br><br>
+    quantas derrotas teve<input id="derrotas" type="text"><br><br>
+    <button onclick="calcular()">calcular performance dos atletas</button>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var faixaBranca = ((vitorias.value * 4) + (empates.value * 2) - (derrotas.value * (4 * 0.5)));
+        var faixaAzul = ((vitorias.value * 10) + (empates.value * 2) - (derrotas.value * (10 * 0.5)));
+        var faixaAmarela = ((vitorias.value * 30) + (empates.value * 2) - (derrotas.value * (30 * 0.5)));
+        var faixaLaranja = ((vitorias.value * 60) + (empates.value * 2) - (derrotas.value * (60 * 0.5)));
+        var faixaVerde = ((vitorias.value * 100) + (empates.value * 2) - (derrotas.value * (100 * 0.5)));
+        var faixaRoxa = ((vitorias.value * 150) + (empates.value * 2) - (derrotas.value * (150 * 0.5)));
+        var faixaMarrom = ((vitorias.value * 300) + (empates.value * 2) - (derrotas.value * (300 * 0.5)));
+        var faixaPreta = ((vitorias.value * 500) + (empates.value * 2) - (derrotas.value * (500 * 0.5)));
+
+        var totalLutas = (Number(vitorias.value) + Number(empates.value) + Number(derrotas.value));
+
+        if (faixa.value == 'branca') {
+            resultado.innerHTML = `${nome.value} da faixa ${faixa.value} tem ${faixaBranca}
+            pontos, sendo ${((0 / (0 + faixaBranca)) * 100).toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaBranca / (1000 + Number(faixaBranca))) * 100).toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 4} pontos,
+            hoje ele tem ${(faixaBranca / (totalLutas * 4)) * 100 .toFixed(2)}% do total <br><br> `
+        }
+        else if (faixa.value == 'azul') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaAzul}
+            pontos, sendo ${((1000 / (1000 + faixaAzul)) * 100).toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaAzul / (1000 + Number(faixaAzul))) * 100).toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 10} pontos,
+            hoje ele tem ${(faixaAzul / (totalLutas * 10)) * 100 .toFixed(2)}% do total <br><br>`
+        }
+        else if (faixa.value == 'amarela') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaAmarela}
+            pontos, sendo ${((2000 / (2000 + faixaAmarela)) * 100) .toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaAmarela / (2000 + Number(faixaAmarela))) * 100) .toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 30} pontos,
+            hoje ele tem ${(faixaAmarela / (totalLutas * 30)) * 100 .toFixed(2)}% do total<br><br>`
+        }
+        else if (faixa.value == 'laranja') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaLaranja}
+            pontos, sendo ${((5000 / (5000 + faixaLaranja)) * 100) .toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaLaranja / (5000 + Number(faixaLaranja))) * 100) .toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 60} pontos,
+            hoje ele tem ${(faixaLaranja / (totalLutas * 60)) * 100 .toFixed(2)}% do total<br><br>`
+        }
+        else if (faixa.value == 'verde') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaVerde}
+            pontos, sendo ${((10000 / (10000 + faixaVerde)) * 100) .toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaVerde / (10000 + Number(faixaVerde))) * 100) .toFixed}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 100} pontos,
+            hoje ele tem ${(faixaVerde / (totalLutas * 100)) * 100 .toFixed(2)}% do total<br><br>`
+        }
+        else if (faixa.value == 'roxa') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaRoxa}
+            pontos, sendo ${((15000 / (15000 + faixaRoxa)) * 100) .toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaRoxa / (15000 + Number(faixaRoxa))) * 100) .toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 150} pontos,
+            hoje ele tem ${(faixaRoxa / (totalLutas * 150)) * 100 .toFixed(2)}% do total<br><br>`
+        }
+        else if (faixa.value == 'marrom') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaMarrom}
+            pontos, sendo ${((25000 / (25000 + faixaMarrom)) * 100).toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaMarrom / (25000 + Number(faixaMarrom))) * 100).toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 300} pontos,
+            hoje ele tem ${(faixaMarrom / (totalLutas * 300)) * 100 .toFixed(2)}% do total<br><br>`
+        }
+        else if (faixa.value == 'preta') {
+            resultado.innerHTML += `${nome.value} da faixa ${faixa.value} tem ${faixaPreta}
+            pontos, sendo ${((50000 / (50000 + faixaPreta)) * 100) .toFixed(2)}%
+            dos pontos iniciais da faixa e ${((faixaPreta / (50000 + Number(faixaPreta))) * 100) .toFixed(2)}%
+            em pontos conquistados em lutas
+            Total de lutas: ${totalLutas} sendo ${vitorias.value / totalLutas * 100}% vitórias e
+            ${(((Number(derrotas.value) + Number(empates.value)) / totalLutas) * 100)}% derrotas ou empates
+            Se ${nome.value} tivesse vitória em todas as lutas ele teria ${totalLutas * 500} pontos,
+            hoje ele tem ${(faixaPreta / (totalLutas * 500)) * 100 .toFixed(2)}% do total<br><br>`
+        }
+        
+    }
+</script>

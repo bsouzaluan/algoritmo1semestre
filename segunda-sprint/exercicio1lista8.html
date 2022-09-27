@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual fruta que chegou até a mesa <input id="fruta" type="text">
+    <button onclick="comer()">vai comer?</button>
+</body>
+</html>
+
+<script>
+    function comer() {
+        var f =fruta.value;
+        if (f == 'uva'|| f=='abacaxi') {
+            alert(`sim vai comer ${f}`)
+        }else{
+           alert( `A fruta ${f} ela não come`)
+        }
+    }
+</script>

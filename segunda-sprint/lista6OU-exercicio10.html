@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    Nome da empresa: <input type="text" id="ipt_empresa"><br>
+    Valor da bolsa: <input type="text" id="ipt_bolsa"><br>
+    Valor de VR: <input type="text" id="ipt_vr"><br>
+    Tempo de deslocamento (min): <input type="text" id="ipt_tempo"><br>
+    <button onclick="verificar()">É preferida?</button>
+    <br>
+    <div id="res">
+
+    </div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var empresa = ipt_empresa.value
+        var bolsa = Number(ipt_bolsa.value)
+        var vr = Number(ipt_vr.value)
+        var tempo = Number(ipt_tempo.value)
+
+        if (empresa != '' && bolsa != '' && vr != '' && tempo != '') {
+            if (bolsa >= 1800 || vr >= 20 || tempo <= 30) {
+                res.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+            } else {
+                res.innerHTML = `A empresa ${empresa} está fora da sua lista`
+            }
+        } else {
+            alert(`PREENCHA TODOS OS CAMPOS`)
+        }
+    }
+</script>

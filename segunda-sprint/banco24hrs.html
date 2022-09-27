@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco24hrs</title>
+</head>
+<body>
+    notas de 10 reais<input id="nota10" type="text"><br>
+    notas de 50 reais<input id="nota50" type="text"><br>
+    notas de 100 reais<input id="nota100" type="text"><br>
+    
+    <button onclick="iniciar()">iniciar</button>
+    
+    <div id="mostrar"></div>
+    <h1>Notas disponiveis 10,50,100</h1> 
+
+    <button onclick="saque()">Solicitar saque</button>
+
+    <input id="saque1" type="text">
+
+    <div id="mostrar2" ></div>
+    
+    
+
+</body>
+</html>
+    <script>
+
+        var nt10=0;
+        var nt50=0;
+        var nt100=0;
+        var saques1 =0;
+
+
+        function iniciar(){
+            var nts10=nota10.value;
+            var nts50=nota50.value;
+            var nts100=nota100.value;
+            nt10 = nts10 *10;
+            nt50 = nts50 *50;
+            nt100 = nts100 *100;
+            var qntNotas = (Number(nt10) + Number(nt50) +Number(nt100));
+
+            mostrar.innerHTML = `voce tem${nts10} nota de 10 reais <br>
+            voce tem${nts50} nota de 50 reais<br>
+             voce tem ${nts100} nota de 100 reais <br>
+             totalizando ${qntNotas} reais`;            
+        }
+
+        function saque() {
+            var nts10=nota10.value;
+            var nts50=nota50.value;
+            var nts100=nota100.value;
+            nt10 = nts10 *10;
+            nt50 = nts50 *50;
+            nt100 = nts100 *100;
+            var divisaont100=nt100/100;
+            var divisaont50=nt50/50;
+            var divisaont10=nt10/10;
+            var restoDivisaont100 = divisaont100%100;
+            var restoDivisaont50 = divisaont50%50;
+            var restoDivisaont100 = divisaont10%10;
+            
+            
+            var qntNotas = (Number(nt10) + Number(nt50) +Number(nt100));
+            var sacar = saque1.value
+            if (saque1.value<=0 ) {
+                
+                alert('nao é possivel sacar zero ou menos')
+               
+            }if
+                (qntNotas <= sacar ){
+                   alert(`Montante disponível não atende a solicitação`)
+                }
+                 if(sacar%10 !=0){
+                   alert(`Valor não possível devido às notasdisponíveis`)
+                }
+
+                
+
+
+            
+
+        }
+
+
+    </script>

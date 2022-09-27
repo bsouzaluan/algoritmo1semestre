@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    voce ja clicou<div id="div">0</div>vezes no topo
+    <button onclick="clicar()">clique cabalistico</button>
+    
+</body>
+</html>
+
+<script>
+
+    var clica = 0
+    function clicar() {
+         clica ++;
+         div.innerHTML =clica
+        if (clica==3 ||clica ==4 ||clica ==7 ||clica==10 ) {
+            alert(`voce já clicou ${clica}vezes`) ;
+        }   
+    }
+</script>

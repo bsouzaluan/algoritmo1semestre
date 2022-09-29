@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="cartas1">
+        <option value="cartaNormal">Carta Normal</option>
+        <option value="ouro">Ouro</option>
+        <option value="espada">Espada</option>
+        <option value="copas">copas</option>
+        <option value="paus">Paus</option>
+    </select>
+    <select id="cartas2">
+        <option value="cartaNormal">carta Normal</option>
+        <option value="ouro">Ouro</option>
+        <option value="espada">Espada</option>
+        <option value="copas">copas</option>
+        <option value="paus">Paus</option>
+    </select>
+    <button onclick="desce()">truco</button>
+</body>
+
+</html>
+
+<script>
+
+   
+    function desce() {
+        var carta1 = cartas1.value;
+        var carta2 = cartas2.value;
+        if (carta1 == carta2) {
+            alert('não pode ser jogado')
+        } else if (carta1== 'paus'&& carta2=='copas'||carta2=='espada'||carta2=='ouro'||carta2=='cartaNormal'||
+        carta1=='copas'&&carta2=='espada'||carta2=='ouro'||carta2=='cartaNormal'||carta1=='espada'&&carta2=='ouro'||carta2== 'cartaNorma'||
+        carta1=='ouro'&&carta2=='cartaNormal') {
+            alert('jogador 1 venceu')
+        } else {
+            alert('jogador 2 venceu')
+        }
+        }
+    
+        
+           
+       
+    
+       
+        
+    
+</script>

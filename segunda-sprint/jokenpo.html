@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    jogador1
+    <select  id="jogador1">
+        <option value="pedra1">pedra</option>
+        <option value="papel1">papel</option>
+        <option value="tesoura1">tesoura</option>
+    </select>
+    jogador2
+    <select  id="jogador2">
+        <option value="pedra">pedra</option>
+        <option value="papel">papel</option>
+        <option value="tesoura">tesoura</option>
+    </select>
+
+    <button onclick="jogar()">jogar</button>
+</body>
+</html>
+
+<script>
+    function jogar() {
+        var jogo1 = jogador1.value;
+        var jogo2 = jogador2.value ;
+        if (jogo1=="pedra1" && jogo2== "tesoura" ||jogo1== "papel1" && jogo2== "pedra" ||jogo1== "tesoura1" && jogo2== "papel"  )
+         {
+            alert('jogador1')
+        } else {
+            alert('jogador2')
+        }
+    }
+</script>

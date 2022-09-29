@@ -32,53 +32,82 @@
         var nt50=0;
         var nt100=0;
         var saques1 =0;
+        var resto =0;
+        var total = 0;
+        var usar100 = 0;
+        var usar50 = 0;
+        var usar10 =0;
+
 
 
         function iniciar(){
-            var nts10=nota10.value;
-            var nts50=nota50.value;
-            var nts100=nota100.value;
-            nt10 = nts10 *10;
-            nt50 = nts50 *50;
-            nt100 = nts100 *100;
-            var qntNotas = (Number(nt10) + Number(nt50) +Number(nt100));
+             nt10=nota10.value;
+             nt50=nota50.value;
+             nt100=nota100.value;
+             total = ((nt10*10) + (nt50*50) +(nt100*100));
 
-            mostrar.innerHTML = `voce tem${nts10} nota de 10 reais <br>
-            voce tem${nts50} nota de 50 reais<br>
-             voce tem ${nts100} nota de 100 reais <br>
-             totalizando ${qntNotas} reais`;            
+            mostrar.innerHTML = `voce tem${nt10} nota de 10 reais <br>
+            voce tem${nt50} nota de 50 reais<br>
+             voce tem ${nt100} nota de 100 reais <br>
+             totalizando ${total} reais`;            
         }
 
         function saque() {
-            var nts10=nota10.value;
-            var nts50=nota50.value;
-            var nts100=nota100.value;
-            nt10 = nts10 *10;
-            nt50 = nts50 *50;
-            nt100 = nts100 *100;
-            var divisaont100=nt100/100;
-            var divisaont50=nt50/50;
-            var divisaont10=nt10/10;
-            var restoDivisaont100 = divisaont100%100;
-            var restoDivisaont50 = divisaont50%50;
-            var restoDivisaont100 = divisaont10%10;
-            
-            
-            var qntNotas = (Number(nt10) + Number(nt50) +Number(nt100));
+          
+            var faltou = 0;
             var sacar = saque1.value
-            if (saque1.value<=0 ) {
-                
-                alert('nao é possivel sacar zero ou menos')
-               
-            }if
-                (qntNotas <= sacar ){
-                   alert(`Montante disponível não atende a solicitação`)
-                }
-                 if(sacar%10 !=0){
-                   alert(`Valor não possível devido às notasdisponíveis`)
-                }
 
+            if (sacar>0 ) {
                 
+                if
+                (sacar <=total ){
+                    if(sacar%10 ==0){
+                        usar100 = Math.floor (sacar/100)
+                    resto = sacar%100;
+                    if (usar100>nt100) {
+                        
+                        faltou = usar100 - nt100;
+                        usar100 = nt100;
+                        resto = resto +(faltou*100);
+                        
+                    }
+                     
+                  usar50=Math.floor (resto/50 );
+                  resto = resto %50;
+                     if (usar50>nt50) {
+                        
+                        faltou = usar50 - nt50;
+                        usar50 = nt50;
+                        resto = resto +(faltou*50);
+                    }
+                    usar10=Math.floor(resto/10)
+
+                    if (usar10 >nt10) {
+                        
+                        alert('quantidade valor da cedulas disponiveis não atende ao valor desejado')
+                       
+                    }else{
+                        nt100 -= usar100;
+                        nt50 -= usar50;
+                        nt10 -= usar10;
+                        total -=sacar;
+                        alert('Retire o dinheiro no local indicado')
+                    }
+                }else{
+                    alert(`Valor não possível devido às notasdisponíveis`)
+                }
+                }else{
+                    alert(`Montante disponível não atende a solicitação`)
+                }
+               
+            }else{
+                alert('nao é possivel sacar zero ou menos')
+            }
+                
+                   
+                
+                    
+              
 
 
             

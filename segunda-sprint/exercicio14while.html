@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite sua idade e veja a fase da vida que esta <input id="idade" type="text">
+
+    <button onclick="fase()">veja a fase que esta</button>
+
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    function fase() {
+    var d =idade.value;  
+    var contador=0;
+    mostrar.innerHTML = '';
+        while (contador <=d) {
+           
+            if ((d && contador)<=4) {
+                mostrar.innerHTML += ` ${contador} anos (Primeira Infância)<br>`;
+            contador++;
+
+            }
+            else if ((d && contador)<=6) {
+                mostrar.innerHTML += `${contador} anos (Pré-escolar)<br>`;
+                contador++;
+            }
+            else if ((d && contador)<=10){
+                mostrar.innerHTML += `${contador} anos (Segunda Infância)<br>`;
+                contador++;
+            }
+            else if((d && contador)<=18){
+                mostrar.innerHTML += `${contador} anos (Adolescência)<br>`;
+                contador++;
+            }
+            else if((d && contador)<50){
+                mostrar.innerHTML += `${contador} anos (Adulto)<br>`;
+                contador++;
+            }
+            else if((d && contador)<=100){
+                mostrar.innerHTML += `${contador} anos (Melhor idade)<br>`;
+                contador++;
+            }
+            else if((d && contador)>100){
+                mostrar.innerHTML += `${contador} anos (Matusalém)<br>`;
+                contador++;
+            }
+           
+        }
+    }
+</script>

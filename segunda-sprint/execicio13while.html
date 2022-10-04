@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos em quantos dias voce faz musculaçao <input id="ipt_dias" type="text">
+
+    <button onclick="rotina()">Exibir rotina mensal</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+    function rotina() {
+
+        var contador= 0;
+        var dias=Number(ipt_dias.value);
+        exibir.innerHTML = '';
+        while (contador < 30) {
+            contador++;
+            if ((contador %dias ==!0) || (contador ==1)) {
+                exibir.innerHTML += `dia${contador}-musculação <br>`;
+            }else{
+                exibir.innerHTML += `dia ${contador}comer,dormir etc <br>`
+            }
+           
+        }
+        
+    }
+</script>

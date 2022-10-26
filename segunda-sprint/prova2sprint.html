@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos pontos de energia voce tem <input id="ipt_pontosEnergia" type="text">
+    quantos clones deseja <input id="ipt_clones" type="text">
+    quantidade de clones por linha <input id="ipt_clonesPorLinha" type="text">
+    <button onclick="clones()">criar clones</button>
+
+    <div id="exibir"></div>
+
+</body>
+</html>
+
+<script>
+    function clones() {
+        var pontosEnergia = ipt_pontosEnergia.value;
+        var qntdClones = ipt_clones.value;
+        var clonesPorLinha =  ipt_clonesPorLinha.value;
+        var contador = 0;
+        
+
+        if(pontosEnergia >20 && pontosEnergia <5000){
+                    if (qntdClones > 0 && qntdClones <250) {
+                        if (clonesPorLinha >0) {
+                        
+                    } else {
+                        alert(`ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000.
+             Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0`)
+                    }
+                    } else {
+                        alert(`ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000.
+             Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0`)
+                    }
+        }else{
+            alert(`ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000.
+             Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0`)
+        }
+     
+        while (contador <= qntdClones  ) {
+            contador ++;
+            exibir.innerHTML=` <img src = https://static.wikia.nocookie.net/naruto-pedia/images/e/ea/Naruto.png/revision/latest?cb=20120407114822&path-prefix=pt-br>`
+        }
+    }
+</script>

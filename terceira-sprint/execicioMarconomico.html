@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=qua, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    qual o valor que voce tem guardado <input id="ipt_valorGuardado" type="text"> <br>
+    qual o valor poupado a cada mês <input id="ipt_poupadoMes" type="text"><br>
+    quantidade de meses poupado <input id="ipt_qntdMesesPoupado" type="text"><br>
+    qual o juros que vai ser aplicado <input id="ipt_jurosAplicado" type="text"><br>
+
+    <button onclick="poupar()">vamos poupar</button>
+
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function poupar() {
+        var contador = 0;
+        var valorGuardado = Number(ipt_valorGuardado.value);
+        var poupadoMes = Number (ipt_poupadoMes.value);
+        var mesesPoupado = Number (ipt_qntdMesesPoupado.value);
+        var jurosAplicado = Number (ipt_jurosAplicado.value);
+        var juros = (valorGuardado*jurosAplicado)/100;
+        var saldoFinal = valorGuardado +juros + poupadoMes;
+        
+
+
+        if (poupadoMes >0) {
+            
+            if (mesesPoupado >10) {
+                if (jurosAplicado >0.5 && jurosAplicado <2.00) {
+                    
+                } else {
+                    alert(` percentual de juros tem que ser maior que meio e menor que dois `)
+                }
+            } else {
+                alert(` a quantidade de meses tem que ser maior `)
+            }
+        }else{
+            alert(`poupe um valor que seja  maior que zero`)
+        }
+
+        while (contador < mesesPoupado) {
+            
+            contador++;
+            if (contador==1) {
+                mostrar.innerHTML += `mês ${contador} saldo inicial =  ${valorGuardado } saldo final = ${saldoFinal} <br>`
+            }else{
+                mostrar.innerHTML += `mês ${contador} saldo inicial =  ${valorGuardado =valorGuardado + poupadoMes + juros} saldo final = ${saldoFinal = saldoFinal + poupadoMes + juros} <br>`
+            }
+           
+        }
+        mostrar.innerHTML += `voce começou com ${ipt_valorGuardado.value}
+            depositou ${(poupadoMes*mesesPoupado)} <br>
+            agora voce tem ${saldoFinal}com o juros<br> 
+            neste periodo sua conta rendeu ${ saldoFinal - valorGuardado } por mês <br>
+            rentabilidade ${( saldoFinal - valorGuardado )/(Number (ipt_valorGuardado.value) + poupadoMes*mesesPoupado)*100}`
+    }
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Pergunte ao usuário quantos ônibus precisa pegar <input id="ipt_onibus" type="text"><br>
+     Pergunte ao usuário quantos trens precisa pegar <input id="ipt_trens" type="text"><br>
+     Pergunte ao usuário quantos metrôs precisa pegar <input id="ipt_metro" type="text"><br>
+
+     <button onclick="trajeto()">#partiu trajeto</button>
+     <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+
+    function trajeto() {
+        var contadorOnibus = 0;
+        var contadorTrem = 0;
+        var contadorMetro = 0;
+        var onibus = Number(ipt_onibus.value);
+        var trens = Number(ipt_trens.value);
+        var metro = Number(ipt_metro.value);
+        
+        exibir.innerHTML= ' ';
+        
+        
+
+        while (contadorOnibus < onibus) {
+            contadorOnibus ++;
+            if (contadorOnibus == 2) {
+             exibir.innerHTML += `<b style="color: red;">Pegando o ${contadorOnibus}º buzão.começando a cansar!</b><br>`
+        
+            }else if(contadorOnibus >= 3){
+            exibir.innerHTML+= `<b style="color: red;">Pegando o ${contadorOnibus}º buzão. Já cansado!</b><br>`
+            }else {
+            exibir.innerHTML+= `<b style="color: red;">Pegando o ${contadorOnibus}º buzão.</b><br>`
+        }
+        }
+        while (contadorTrem < trens) {
+            contadorTrem++
+            if (contadorTrem == 2) {
+                exibir.innerHTML += `<b style="color: green;">Pegando o ${contadorTrem}º trem.começando a cansar!</b><br>`
+            }
+            else if(contadorTrem >= 3){
+            exibir.innerHTML+= `<b style="color: green;">Pegando o ${contadorTrem}º trem. Já cansado!</b><br>`
+            }else {
+            exibir.innerHTML+= `<b style="color: green;">Pegando o ${contadorTrem}º trem.</b><br>`
+            }
+        }
+        while (contadorMetro < metro) {
+            contadorMetro++
+            if (contadorMetro == 2) {
+                exibir.innerHTML += `<b style="color: blue;">Pegando o ${contadorMetro}º metro.começando a cansar!</b><br>`
+            }
+            else if(contadorMetro >= 3){
+            exibir.innerHTML+= `<b style="color: blue;">Pegando o ${contadorMetro}º metro. Já cansado!</b><br>`
+            }else {
+            exibir.innerHTML+= `<b style="color: blue;">Pegando o ${contadorMetro}º metro.</b><br>`
+            }
+        }
+    }
+</script>

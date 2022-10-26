@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="curto()">Curto 3 e 5</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    function curto() {
+        var contador = 0;
+        
+
+        while (contador <= 100) {
+            contador++;
+          if ((contador%3) == 0) {
+            mostrar.innerHTML += `é tri<br>`
+          }else if((contador%5) == 0){
+            mostrar.innerHTML += `é penta<br>`
+          }else if ((contador % 5 == 0) && (contador %3 == 0)){
+            mostrar.innerHTML += `${contador}é tri é penta<br>`
+          }
+        }
+    }
+</script>

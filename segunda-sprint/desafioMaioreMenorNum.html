@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- limpar input 
+pegar registros-->
+    Insira um número: <input id="ipt_num" type="text">
+
+    <button onclick="registro()">Registrar</button>
+    <!-- resumo da analise numerica
+    >, <, qtd, somatoria e media -->
+    <button onclick="resumo()">Resumir</button>
+    <br><br>
+    <span id="span_msg"></span>
+</body>
+
+</html>
+
+<script>
+    var numero = 0
+    var qtd_vezes = 0
+    var menorNum = 999
+    var maiorNum = 0
+    var soma = 0
+    var media = 0
+
+    function registro() {
+        numero = Number(ipt_num.value)
+
+        if (Number.isNaN(numero)) {
+            alert(`Insira um número.`)
+        }
+        else if (numero < 10 || numero > 100) {
+            alert(`Insira um número válido.`)
+        }
+
+        ipt_num.value = ''
+        qtd_vezes++
+        soma += numero 
+        if (numero < menorNum) {
+            menorNum = numero
+        }
+
+         if (numero > maiorNum) {
+            maiorNum = numero
+        }
+
+        media = soma / qtd_vezes
+    }
+
+    function resumo() {
+        span_msg.innerHTML = `maior número: ${maiorNum} <br> menor numero: ${menorNum} <br> soma: ${soma} <br> media: ${media.toFixed(1)} <br> quantidade de vezes: ${qtd_vezes}`
+    }
+
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    digite o limite inferior <input id="ipt_inferior" type="text"><br>
+    digite o limite superior <input id="ipt_superior" type="text"><br>
+    digite um numero para testar a divisibilidade <input id="ipt_divisibilidade" type="text"><br>
+
+    <button onclick="conta()">contar</button>
+
+    <div id="mostrar"></div>
+
+</body>
+</html>
+
+<script>
+
+    function conta() {
+        
+        var inferior = Number( ipt_inferior.value);
+        var superior = Number (ipt_superior.value);
+        var divisibilidade = Number( ipt_divisibilidade.value);
+        var numerosExibidos = 0;
+        var somatoria = 0;
+        var media = 0;
+        var menorNum = 999;
+        var maiorNum = 0;
+        var contador =0;
+
+        if (inferior > 1) {
+            
+            if (superior < 100 && superior > inferior) {
+                
+                if (divisibilidade >=3 && divisibilidade <=10) {
+                    
+                } else {
+                    alert(`numero divisivel tem que estar entre 3 e 10 `)
+                }
+            } else {
+                alert(`superior tem que ser menor que 100 e maior que o limite inferior `)
+            }
+        } else {
+            alert(`numero inferior tem que ser maior que 1`)
+        }
+      
+        while (inferior<=superior) {
+            
+            if (inferior%divisibilidade ==0) {
+                mostrar.innerHTML +=`${inferior},`
+                contador++
+                somatoria +=inferior;
+                media=somatoria/contador;
+                maiorNum =  inferior;
+                if (inferior <= menorNum) {
+                    menorNum = inferior
+                }
+            } 
+            inferior++;
+            
+        }
+      
+        mostrar.innerHTML += `<br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS${contador}<br>
+        SOMATÓRIO DOS NÚMEROS EXIBIDOS:${somatoria}<br>
+        MÉDIA DOS NÚMEROS EXIBIDOS:${media}<br>
+        MAIOR NÚMERO EXIBIDO:${maiorNum}<br>
+        MENOR NÚMERO EXIBIDO:${menorNum}`
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    entre com o primeiro numero<input id="primeiroNumero" type="text">
+    entre com o segundo numero<input id="segundoNumero" type="text">
+
+    <button onclick="botao()">botao</button>
+    <div id="mostrar"></div>
+    
+</body>
+</html>
+
+<script>
+    
+    function botao() {
+        var primeiro =Number(primeiroNumero.value);
+        var segundo =Number(segundoNumero.value);
+        mostrar.innerHTML='';
+        
+        while (primeiro <= segundo ) {
+            if (primeiro%2==0) {
+                mostrar.innerHTML += `${primeiro}<br>`
+            }
+               primeiro++;
+        }
+    }
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite o limite inferior <input id="ipt_inferior" type="text">
+    digite o limite superior <input id="ipt_superior" type="text">
+
+    <button onclick="conta()">contar</button>
+
+    <div id="mostra"></div>
+</body>
+</html>
+
+<script>
+    function conta() {
+        
+        var inferior = Number( ipt_inferior.value);
+        var superior = Number(ipt_superior.value);
+       
+        
+        
+        if (inferior >1) {
+            if (superior < 100) {
+                
+            } else {
+                alert(`limite supeior tem que ser menor que 100`)
+            }
+        }else{
+            alert(`limite infeior tem que ser maior que 1`)
+        }
+
+        for (var contador = inferior; contador<= superior;contador++) {
+            
+            if (contador% 2==1) {
+                mostra.innerHTML += `${contador}`
+            }
+    }
+}
+</script>

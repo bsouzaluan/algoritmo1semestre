@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite o limite inferior da amostragem <input id="ipt_limiteInferior" type="text"><br>
+    digite o limite superior da amostragem <input id="ipt_limiteSuperior" type="text"><br>
+    digite o primeiro numero divisivel <input id="ipt_primeiroDivisor" type="text"><br>
+    digite o segundo numero divisivel <input id="ipt_segundoDivisor" type="text"><br>
+
+    <button onclick="Mostra()">Mostrar</button>
+
+<div id="exibir" ></div>
+
+</body>
+</html>
+
+<script>
+
+    function Mostra() {
+        
+        var limiteInferior = Number(ipt_limiteInferior.value);
+        var limiteSuperior =Number (ipt_limiteSuperior.value);
+        var primeiroDivisor = Number(ipt_primeiroDivisor.value);
+        var segundoDivisor = Number(ipt_segundoDivisor.value);
+        var contador = 0;
+        var cofre =0;
+        var media = 0;
+        var maiorNum = 0;
+        var menorNum = 1000;
+        
+
+        if (limiteInferior <20) {
+            alert(`Limite inferior tem que ser maior que 20`)
+        }
+        else if (limiteSuperior < limiteInferior && limiteInferior <1000) {
+            alert(`Limite superior invalido, verifique o conteúdo.`)
+        }
+        else if (primeiroDivisor <3 || primeiroDivisor >20) {
+            alert(`Primeiro número de divisibilidade tem que estar entre 3 e 20.`)
+        }
+        else if (segundoDivisor < 3 || segundoDivisor >20 || segundoDivisor==primeiroDivisor) {
+            alert(`Segundo número de divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro`)
+        }else{
+         
+            for (limiteInferior; limiteInferior <= limiteSuperior; limiteInferior++) {
+               
+                if (limiteInferior % primeiroDivisor == 0 && limiteInferior % segundoDivisor == 0 ) {
+                    exibir.innerHTML += `o numero${limiteInferior} é divisivel pelo primeiro e pelo segundo numero <br>`
+                    contador++;
+                    cofre+=limiteInferior;
+                    media=cofre/contador;
+                    maiorNum = limiteInferior;
+                    if ( limiteInferior < menorNum ) {
+                        menorNum=limiteInferior
+                    }
+                }
+                else if (limiteInferior % primeiroDivisor == 0){
+                    exibir.innerHTML += `o numero${limiteInferior} é divisivel pelo primeiro numero<br>`
+                    contador++;
+                    cofre+=limiteInferior
+                    media=cofre/contador;
+                    maiorNum = limiteInferior;
+                    if ( limiteInferior < menorNum ) {
+                        menorNum=limiteInferior
+                    }
+                }
+                else if(limiteInferior % segundoDivisor == 0){
+                    exibir.innerHTML += `o numero${limiteInferior} é divisivel pelo  segundo numero<br>`
+                    contador++;
+                    cofre+=limiteInferior
+                    media=cofre/contador;
+                    maiorNum = limiteInferior;
+                    if ( limiteInferior < menorNum ) {
+                        menorNum=limiteInferior
+                    }
+
+                }
+            }
+            if (limiteInferior ==0) {
+                alert(`nenhum numero é divisivel`)
+            }else{
+                exibir.innerHTML += `Quantidade de numeros exibidos: ${contador} <br>
+                                    Média dos numeros exibidos: ${media}<br>
+                                    Maior número exibido:${maiorNum} <br>
+                                    Menor número exibido: ${menorNum}<br>`              
+            }
+
+        }
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantas coca-cola voce ja bebeu na vida <input type="text" id="ipt_coca" >
+    <button onclick="quantidade()">ver quantidade</button>
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+    function quantidade() {
+      var coca =Number(ipt_coca.value);
+
+        for(var contador=1;contador <= coca; contador++) {
+           exibir.innerHTML += `<img src="https://araujo.vteximg.com.br/arquivos/ids/4177801-1000-1000/07894900027013.jpg?v=637952323325130000 ">`
+        }
+    }
+</script>

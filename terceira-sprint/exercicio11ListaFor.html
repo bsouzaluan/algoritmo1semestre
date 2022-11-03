@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    digite o numero inferior <input id="ipt_inferior" type="text">
+    digite o numero superior <input id="ipt_superior" type="text">
+    digite o numero para testar a divisibilidade <input id="ipt_divisibilidade" type="text">
+    <button onclick="contar()">contar</button>
+
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+    function contar() {
+        
+        var inferior = Number(ipt_inferior.value);
+        var superior = Number (ipt_superior.value);
+        var divisibilidade = Number(ipt_divisibilidade.value);
+
+        if (inferior < 1) {
+            alert(`numero inferior tem que ser maior que 1`)
+        }
+        else if (superior>100){
+            alert(`numero superior tem que ser menor que 100`)
+        }else if(divisibilidade <3 && divisibilidade>10){
+            alert(`numero divisivel tem que estar entre 3 e 10`)
+        }else{
+            for (var index = inferior; index <= superior; ) {
+
+        if (index % divisibilidade == 0) {
+        mostrar.innerHTML +=`${index}`
+    
+        }
+        index++
+        }
+        }
+
+       
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    digite o nome do filme que mais gosta <input id="ipt_filmes" type="text">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+    var vt_filmes = [];
+    
+    function cadastrar() {
+        
+        exibir.innerHTML='';
+
+        if (ipt_filmes.value == ''){
+            exibir.innerHTML = `escreva algum filme no campo`
+        }else{
+        vt_filmes.push(ipt_filmes.value);
+        ipt_filmes.value ='';
+        }
+        
+        
+        for (var index = 0; index <= vt_filmes.length -1; index++) {
+
+            if (index%2==0) {        
+                exibir.innerHTML += `<font color="blue"><br> ${vt_filmes[index]}</font>`
+            }else{
+                exibir.innerHTML += `<font color="red"><br> ${vt_filmes[index]}</font>`
+            }
+
+            
+        }
+
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantas vitorias voce possui no campeonato <input id="ipt_vitoria" type="text"><br>
+    quantas derrotas voce possui no campeonato <input id="ipt_derrota" type="text"><br>
+    quantos empates voce possui no campeonato <input id="ipt_empate" type="text"><br>
+    <button onclick="analisar()">Analisar campanha</button>
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        
+        var campanha = { 
+            vitoria:ipt_vitoria.value *3,
+            derrota:ipt_derrota.value *1,
+            empate:ipt_empate.value,
+
+        }
+
+        mostrar.innerHTMl = `o time terminou o capeonato com ${campanha.vitoria } ${campanha.derrota } ${campanha.empate}pontos`
+    }
+</script>

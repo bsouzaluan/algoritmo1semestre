@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    informe o filme que mais gosta <input id="ipt_filmeFavorito" type="text">
+
+    <button onclick="cadastrar()">cadastrar filme</button>
+
+    <button onclick="favoritos()">ver favoritos</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+    var vt_filme = [];
+    function cadastrar() {
+       
+        if (ipt_filmeFavorito.value =='') {
+            exibir.innerHTML =`digite um filme no campo`
+        }else{
+        vt_filme.push(ipt_filmeFavorito.value);
+        ipt_filmeFavorito.value ='';
+        exibir.innerHTML ='';
+        }
+        
+    }
+
+    function favoritos() {
+       
+        if (vt_filme=='') {
+            exibir.innerHTML =`digite algo no campo para validar`
+        }else{
+            exibir.innerHTML = `total: ${vt_filme.length} <br> 
+        o que mais gosta é ${vt_filme[0]} <br> 
+        o que menos gosta é ${vt_filme[vt_filme.length -1]}`
+        }
+       
+    
+    }
+</script>

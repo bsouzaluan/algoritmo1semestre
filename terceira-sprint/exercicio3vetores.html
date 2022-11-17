@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    digite o nome do bairro <input id="ipt_nomeBairro" type="text">
+    <button onclick="cadastrar()">cadastrar bairro</button><br>
+    digite o numero <input id="ipt_numero" type="text">
+    <button onclick="relembrarMoradia()">Relembrar moradia</button>
+
+    <div id="mostrar"></div>
+</body>
+</html>
+
+<script>
+ 
+    var bairro = [];
+
+    function cadastrar() {
+    
+        bairro.push(ipt_nomeBairro.value);
+
+        ipt_nomeBairro.value ='';
+    }
+
+    function relembrarMoradia() {
+
+        mostrar.innerHTML =`${bairro[ipt_numero.value -1]}`
+
+        if (ipt_numero.value > bairro.length) {
+            mostrar.innerHTML=(`voce ainda não morou num ${ipt_numero}º bairro`)
+        }
+    }
+</script>

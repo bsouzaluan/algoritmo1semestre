@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     digite o nome da linha que voce pegou<input id="ipt_linhaOnibus" type="text">
+     <button onclick="gravarBuzao()">Gravar Buzão</button><br>
+     
+     pesquise por uma linha que voce já pegou <input id="ipt_pesquisarLinha" type="text">
+     <button onclick="pesquisar()">Pesquisar</button><br>
+
+     <div id="exibir"></div>
+</body>
+</html>
+
+
+<script>
+
+    var vt_linhas =[];
+    function gravarBuzao() {
+        
+
+        if (ipt_linhaOnibus.value =='') {
+        alert ('digite o nome da linha que voce já pegou')
+
+        }else{
+        vt_linhas.push(ipt_linhaOnibus.value);
+        ipt_linhaOnibus.value ='';
+        exibir.innerHTML = '';
+
+        for (var index = vt_linhas.length -1; index >=0; index--) {
+
+            exibir.innerHTML += `<br>${vt_linhas[index]}`
+        }
+        }
+    }
+
+    function pesquisar() {
+        
+        var pesquisarLinha = ipt_pesquisarLinha.value;
+        if (pesquisarLinha == '') {
+            alert('digite uma linha para pesquisar')
+        }else{
+            for (var index = 0; index < vt_linhas.length; index++) {
+                
+             if (pesquisarLinha == vt_linhas[index]) {
+                vt_linhas.push(index+1)
+                mostrar.innerHTML = `Você andou nessa linha ${vt_linhas.length} vezes, nessa ordem:${vt_linhas}`
+            }
+            else if (pesquisarLinha == vt_linhas.indexOf){
+                mostrar.innerHTML = `Você nunca andou nessa linha.`
+            }
+            
+                
+            }
+        }
+    }
+</script>

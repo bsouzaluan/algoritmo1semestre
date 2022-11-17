@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    qual o nome do seu filho <input id="ipt_nomeFilho" type="text">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar familia</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+    var vt_filhos =[];
+    function cadastrar() {
+        if (ipt_nomeFilho == '') {
+            alert('digite o nome de algum filho')
+        }else if (vt_filhos.indexOf(ipt_nomeFilho.value) != -1){
+            alert('não pode mais de um filho com o mesmo nome')
+        }else{
+        vt_filhos.push(ipt_nomeFilho.value);
+        ipt_nomeFilho.value = '';
+        atualizar()
+        }
+    }
+
+    function atualizar() {
+        exibir.innerHTML ='';
+        var publica = vt_filhos.lenght * 1500;
+        var particular = vt_filhos.lenght *3000;
+        exibir.innerHTML += `voce tem ${vt_filhos.length}filhos <br>`
+        exibir.innerHTML += `seu custo mensal será de aproximadamente ${particular.toFixed(2)} em escola particular <br>
+         ou ${publica.toFixed(2)}se eles estudarem em escola publica`
+    }
+</script>

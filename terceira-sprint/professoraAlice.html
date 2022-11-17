@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="telaDeRegistro" style="display:block;">
+
+        <h1>Analise de performances de alunos-Registro</h1>
+
+        Entre com o nome do aluno<input id="ipt_nomeAluno" type="text"><br>
+        Entre com a nota do aluno <input id="ipt_notaAluno" type="text"><br>
+
+        <button onclick="registrar()">Registrar</button><br><br>
+
+        <button onclick="analisar()">analisar</button><br>
+
+        <div id="exibir"></div>
+
+    </div>
+
+    <div id="telaDePesquisa" style="display:none;">
+
+        <h1>Analise de performances de alunos-Pesquisa</h1>
+
+        entre com o intervalo de notas <input id="ipt_notaDe" type="text" placeholder="de">
+        <input id="ipt_notaAte" type="text" placeholder="até">
+        <br>
+        <button onclick="pesquisar()">Pesquisar</button>
+
+        <div id="exibir2"></div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    var vt_nomeAluno = [];
+    var vt_notaAluno = [];
+    function registrar() {
+
+        var nomeAluno = ipt_nomeAluno.value;
+        var notaAluno = ipt_notaAluno.value;
+
+        if (nomeAluno == '') {
+            alert('entre com o nome de um aluno')
+        } else if (notaAluno == '') {
+            alert('entre com uma nota')
+        } else if (notaAluno < 0 && notaAluno > 10) {
+
+            alert('nota tem que ser maior que zero e menor que dez')
+        } else {
+
+            vt_nomeAluno.push(ipt_nomeAluno.value)
+            vt_notaAluno.push(ipt_notaAluno.value)
+            ipt_nomeAluno.value = '';
+            ipt_notaAluno.value = '';
+            exibir.innerHTML = '';
+
+
+            for (var index = vt_nomeAluno.length - 1; index >= 0; index--) {
+                exibir.innerHTML += `<br>Nome ${vt_nomeAluno[index]} Nota ${vt_notaAluno[index]}`
+
+            }
+
+        }
+
+    }
+
+    function analisar() {
+        telaDePesquisa.style.display = 'block';
+        telaDeRegistro.style.display = 'none';
+    }
+
+    function pesquisar() {
+        var notaUm = ipt_notaDe.value;
+        var notaDois = ipt_notaAte.value;
+
+        if (ipt_notaDe.value == '') {
+            alert('insira uma nota')
+
+        }
+        else if (ipt_notaAte.value == '') {
+            alert('insira uma nota')
+        }
+        else if (notaUm < 0 || notaUm > 10) {
+            alert('a nota tem que estar entre 0 e 10')
+        }
+        else if (notaDois < 0 || notaDois > 10) {
+            alert('a nota tem que estar entre 0 e 10')
+        }
+        else {
+            
+           /* if (vt_notaAluno[contador] >= notaUm && vt_notaAluno[contador] <= notaDois) {
+                exibir2.innerHTML += `o  ${vt_nomeAluno[contador]} ficou com a nota ${vt_notaAluno[contador]}`
+                intervaloAluno++;
+            }*/
+        }
+            for (var contador = 0; contador < vt_nomeAluno.length; contador++) {
+                var intervaloAluno = 0;
+                exibir2.innerHTML += ` o  ${vt_nomeAluno[contador]} ficou com a nota ${vt_notaAluno[contador]}`
+
+        }
+    }
+</script>
